@@ -106,7 +106,52 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+// --- NEW: FUNCTION TO GENERATE COURSE INDEX ---
+function generateCourseIndex(data) {
+    const indexContainer = document.getElementById('course-index');
+    indexContainer.innerHTML = '<h2>📚 Modules Overview</h2>';
+    
+    // 1. Get unique subject names
+    const subjects = new Set();
+    data.forEach(item => subjects.add(item.subject));
+    
+    // 2. Create the list container
+    const list = document.createElement('ul');
+    list.style.listStyle = 'none';
+    list.style.padding = '0';
+    list.style.display = 'flex';
+    list.style.justifyContent = 'center';
+    list.style.gap = '20px';
 
+    // 3. Create a list item for each subject
+    subjects.forEach(subject => {
+        const count = data.filter(item => item.subject === subject).length;
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <a href="#" class="course-link" data-filter="${subject}" style="display: block; padding: 10px 15px; background-color: #f0f0f0; border-radius: 5px; text-decoration: none; color: #333; font-weight: bold; border: 1px solid #ccc;">
+                ${subject} 
+                <span style="font-size: 0.8em; color: #007bff;">(${count} topics)</span>
+            </a>
+        `;
+        list.appendChild(listItem);
+    });
+
+    indexContainer.appendChild(list);
+
+    // 4. Attach click listener to links to use the existing filter function
+    document.querySelectorAll('.course-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Stop the link from trying to navigate away
+            const subject = e.target.closest('.course-link').dataset.filter;
+            
+            // Find and click the corresponding navigation button to trigger the filter
+            const navButton = document.querySelector(`.nav-btn[data-filter="${subject}"]`);
+            if (navButton) {
+                navButton.click();
+            }
+        });
+    });
+}
     // --- START THE APPLICATION ---
     loadFlashcards();
 });

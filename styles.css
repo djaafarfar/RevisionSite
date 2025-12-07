@@ -1,0 +1,36 @@
+/* ... (Keep existing body, header, flashcard styles) ... */
+
+#subject-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: #f8f9fa; /* Light background for navigation */
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: #0056b3;
+}
+
+.subject-tag {
+    display: inline-block;
+    background-color: #ffc107; /* Yellow tag */
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

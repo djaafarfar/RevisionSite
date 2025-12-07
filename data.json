@@ -1,0 +1,33 @@
+[
+    {
+        "subject": "ALGO3",
+        "question": "Define the complexity of a 'while' loop.",
+        "answer": "The complexity is determined by the number of iterations the loop performs. If the loop runs N times, the complexity is $O(N)$."
+    },
+    {
+        "subject": "ALGEBRA3",
+        "question": "What is the rank of a matrix?",
+        "answer": "The **rank** is the maximum number of linearly independent column vectors (or row vectors) in the matrix."
+    },
+    {
+        "subject": "ANALYSE3",
+        "question": "What is a uniform limit of functions?",
+        "answer": "A sequence of functions $f_n$ converges **uniformly** to a function $f$ if, for every $\\epsilon > 0$, there exists an integer $N$ such that for all $n \\ge N$ and all $x$ in the domain, $|f_n(x) - f(x)| < \\epsilon$."
+    },
+    {
+        "subject": "OOP",
+        "question": "Explain the concept of 'Polymorphism' in OOP.",
+        "answer": "Polymorphism means 'many forms.' It allows a single interface to be used for general class of actions. The most common forms are **method overriding** (runtime) and **method overloading** (compile-time)."
+    },
+    {
+        "subject": "SI",
+        "question": "What are the two main layers in the OSI model that deal with network routing?",
+        "answer": "The **Network Layer** (Layer 3, handles logical addressing and routing between networks) and the **Data Link Layer** (Layer 2, handles physical addressing and routing within a single network segment)."
+    },
+    {
+        "subject": "PROBA2",
+        "question": "State the formula for the variance of a random variable X.",
+        "answer": "The variance is $\\text{Var}(X) = E[X^2] - (E[X])^2$, where $E[X]$ is the expected value (mean)."
+    }
+
+]
